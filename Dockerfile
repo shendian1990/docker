@@ -13,7 +13,7 @@ RUN apt-get -y install tree nodejs npm && npm install -g tldr && tldr --update
 #RUN git clone https://github.com/Microsoft/vcpkg.git 
 #RUN cd vcpkg && ./bootstrap-vcpkg.sh && ./vcpkg integrate install 
 RUN git clone https://github.com/anishathalye/dotfiles.git \
-&& cd dotfiles && ./install 
+&& cd dotfiles && ./install ; exit 0
 RUN $(which zsh) && git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions \
 && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 RUN apt-get -y install tmux htop iotop ncdu
