@@ -10,7 +10,7 @@ RUN apt-get -y install git curl unzip wget clang
 RUN apt-get -y install openssl libssl-dev python
 RUN apt-get -y install tree nodejs npm && npm install -g tldr && tldr --update
 #install ripgrep
-RUN add-apt-repository ppa:x4121/ripgrep && apt-get update
+RUN add-apt-repository ppa:x4121/ripgrep && apt-get -y update
 
 #RUN git clone https://github.com/Microsoft/vcpkg.git 
 #RUN cd vcpkg && ./bootstrap-vcpkg.sh && ./vcpkg integrate install 
