@@ -16,13 +16,20 @@ RUN apt-get -y install tree nodejs npm && npm install -g tldr && tldr --update
 #install ripgrep
 RUN apt-get install -y vim
 RUN apt-get -y install software-properties-common && add-apt-repository ppa:x4121/ripgrep && apt-get -y update
+RUN apt-get -y install tmux htop iotop ncdu
 RUN apt-get install -y zsh
 
 #must run this manually after install complete
-RUN $(which zsh) 
-RUN git clone https://github.com/zsh-users/zsh-autosuggestions  ~/.zsh/zsh-autosuggestions \
-&& source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 RUN git clone https://github.com/anishathalye/dotfiles.git \
 && cd dotfiles && ./install ; exit 0 
-RUN apt-get -y install tmux htop iotop ncdu
+
+
+# run the installation script  
+#RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+#RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions \
+#&& source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+#RUN $(which zsh)
+#RUN git clone https://github.com/zsh-users/zsh-autosuggestions  ~/.zsh/zsh-autosuggestions \
+#&& source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
