@@ -19,7 +19,8 @@ RUN apt-get -y install software-properties-common && add-apt-repository ppa:x412
 RUN apt-get install -y zsh
 
 #must run this manually after install complete
-RUN $(which zsh) && git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions \
+RUN $(which zsh) 
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions  ~/.zsh/zsh-autosuggestions \
 && source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 RUN git clone https://github.com/anishathalye/dotfiles.git \
